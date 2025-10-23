@@ -27,7 +27,7 @@
   <!-- TODO: Replace with your actual website URL -->
   <meta property="og:url" content="https://focus-mllm-vqa.github.io/">
   <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://github.com/FOCUS-MLLM-VQA/focus-mllm-vqa.github.io/blob/main/static/images/focus_icon.png">
+  <meta property="og:image" content="https://github.com/FOCUS-MLLM-VQA/focus-mllm-vqa.github.io/blob/main/static/images/flow_chart1.svg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering - NeurIPS 2025">
@@ -41,10 +41,10 @@
   <!-- TODO: Same as paper title above -->
   <meta name="twitter:title" content="FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering">
   <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="twitter:description" content="FOCUS is a training-free visual cropping method that leverages MLLM-internal representations to guide the search for the most relevant image region, achieving strong performance across fine-grained VQA datasets with improved efficiency.">
   <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta name="twitter:image" content="https://github.com/FOCUS-MLLM-VQA/focus-mllm-vqa.github.io/blob/main/static/images/flow_chart1.svg">
+  <meta name="twitter:image:alt" content="FOCUS - NeurIPS 2025">
 
   <!-- Academic/Research Specific -->
   <meta name="citation_title" content="FOCUS: Internal MLLM Representations for Efficient Fine-Grained Visual Question Answering">
@@ -220,14 +220,20 @@
                   </span>
                                     </span>
                     <span class="author-block">
-                    <a href="https://de.linkedin.com/in/leo-schwinn-34a61623b" target="_blank"> Leo Schwinn</a><sup>2</sup>,
+                    <a href="https://de.linkedin.com/in/leo-schwinn-34a61623b" target="_blank"> Leo Schwinn</a><sup>2</sup>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
                     <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><sup>1</sup>Technical University of Berlin, <sup>2</sup>Technical University of Munich, <sup>3</sup>CARIAD SE, <sup>4</sup>Volkswagen AG
-                      <br><br>NeurIPS 2025 main track</span>
+                    <span class="author-block">
+                      <sup>1</sup>Technical University of Berlin, 
+                      <sup>2</sup>Technical University of Munich, 
+                      <sup>3</sup>CARIAD SE, 
+                      <sup>4</sup>Volkswagen AG
+                      <br><br>
+                      <a href="https://neurips.cc/" target="_blank">NeurIPS 2025</a> main track
+                    </span>
                     <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
@@ -236,7 +242,7 @@
                     <div class="publication-links">
                          <!-- TODO: Update with your arXiv paper ID -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/abs/2506.21710" target="_blank"
+                        <a href="https://neurips.cc/virtual/2025/poster/119637" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -279,15 +285,13 @@
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="hero-body">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <!-- TODO: Replace with your paper abstract -->
-          <p>
-            While Multimodal Large Language Models (MLLMs) offer strong perception and
+          <p>While Multimodal Large Language Models (MLLMs) offer strong perception and
 reasoning capabilities for image-text input, Visual Question Answering (VQA)
 focusing on small image details still remains a challenge. Although visual cropping
 techniques seem promising, recent approaches have several limitations: the need
@@ -299,7 +303,7 @@ relevant image region. This is accomplished in four steps: first, we identify th
 target object(s) in the VQA prompt; second, we compute an object relevance map
 using the key-value (KV) cache; third, we propose and rank relevant image regions
 based on the map; and finally, we perform the fine-grained VQA task using the top-ranked region. As a result of this informed search strategy, FOCUS achieves strong
-performance across four fine-grained VQA datasets and two types of MLLMs. It
+performance across four fine-grained VQA datasets and three types of MLLMs. It
 outperforms three popular visual cropping methods in both accuracy and efficiency,
 and matches the best-performing baseline, ZoomEye, while requiring 3 – 6.5×
 less compute.
@@ -307,7 +311,6 @@ less compute.
         </div>
       </div>
     </div>
-  </div>
   </div>
 </section>
 <!-- End paper abstract -->
@@ -322,15 +325,13 @@ less compute.
               <img src="static/images/motivation_1.svg" alt="Motivation" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
             <p class="has-text-justified">
-              While MLLMs demonstrate impressive capabilities on regular  VQA tasks, they often struggle with fine-grained VQA that requires attention to small, localized details in images. 
-              We highlight the difference between fine-grained and regular VQA in Fig.(a). Recent MLLMs such as LLaVA-OneVision try to address this issue by employing
-              processing additional local crops extracted from the original images. However, their effectiveness on fine-grained VQA tasks still remains limited. <br><br>
-              An orthogonal research direction to address the limitations of MLLMs in capturing fine details in
-high-resolution images are visual cropping approaches, which seek to pass only
-relevant image regions to the MLLM. However, popular visual cropping techniques like SEAL,
-DC2, ZoomEye, and ViCrop suffer from one or more of the following limitations (see Fig. (b)):
+              While MLLMs demonstrate impressive capabilities on regular  VQA tasks, they often struggle with fine-grained VQA that requires attention to small details in images. 
+              We highlight that most standard VQA datasets are not suited for fine-grained VQA tasks in part (a) of the figure above. Recent MLLMs such as LLaVA-OneVision try to address this issue by
+              processing additional local crops extracted from the original images. However, their effectiveness on fine-grained VQA tasks still remains limited.
+              An orthogonal research direction to address this limitation is visual cropping approaches, which seek to pass only
+relevant image regions to the MLLM. However, popular visual cropping techniques like <a href="https://arxiv.org/abs/2312.14135" target="_blank">SEAL</a>, <a href="https://arxiv.org/abs/2408.15556" target="_blank">DC2</a>, <a href="https://arxiv.org/abs/2411.16044" target="_blank">ZoomEye</a> and <a href="https://arxiv.org/abs/2502.17422" target="_blank">ViCrop</a> suffer from one or more of the following limitations (see part (b) of the figure above):
 (1) reliance on task-specific fine-tuning of MLLMs for fine-grained VQA, (2) use of inefficient,
-exhaustive tree search algorithms, and (3) dependence on Q-K attention weight and therefore, being incompatible with efficient attention implementations such as
+exhaustive tree search algorithms, and (3) dependence on Q-K attention weight and therefore incompatiblility with efficient attention implementations such as
 FlashAttention.<br>
             </p>
         </div>
@@ -351,7 +352,9 @@ FlashAttention.<br>
               <img src="static/images/flow_chart1.svg" alt="Method" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
             <p class="has-text-justified">
-            To tackle limitation (1), FOCUS leverages the internal representations of MLLMs, specifically
+              We propose a visual cropping method, termed <span style="text-decoration: underline;">F</span>ine-grained visual
+<span style="text-decoration: underline;">O</span>bject <span style="text-decoration: underline;">C</span>ropping <span style="text-decoration: underline;">U</span>sing cached token <span style="text-decoration: underline;">S</span>imilarity (FOCUS), that addresses these issues as is outlined
+in the following. To tackle limitation (1), FOCUS leverages the internal representations of MLLMs, specifically
 their key-value (KV) caches, to localize
 question-relevant image regions in a training-free manner—unlike the SEAL technique.
 Moreover, to mitigate limitation (2), our method
@@ -360,20 +363,16 @@ localization without exhaustive cropping of the
 image, thereby improving the algorithmic efficiency—different from DC2
 and ZoomEye. To overcome limitation (3), FOCUS
 utilizes the cached value features readily available during inference, making it natively compatible with efficient attention implementations
-—unlike ViCrop that depends on full attention weights. <br><br>Specifically, FOCUS combines these
-components as follows: for each VQA question, we first identify the target object(s) in the question
-prompt. Second, we construct an object relevance map using cosine similarity between the cached
-text tokens of the target object(s) and the cached image tokens, and then propose relevant regions
-based on this map. Third, we rank the proposed image regions based on the existence confidence of
-the target object in each region. Finally, we perform VQA solely based on the image region with the
-highest confidence. Note that FOCUS is compatible with both global- and global-local-view MLLMs. <br>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
+—unlike ViCrop that depends on full attention weights. Specifically, FOCUS combines these
+components as follows. 
+<ul style="margin-left: 2em;">
+  <li>For each VQA question, we first identify the target object(s) in the question prompt.</li>
+  <li>Second, we construct an object relevance map using cosine similarity between the cached text tokens of the target object(s) and the cached image tokens, and then propose relevant regions based on this map.</li>
+  <li>Third, we rank the proposed image regions based on the existence confidence of the target object in each region.</li>
+  <li>Finally, we perform VQA solely based on the image region with the highest confidence.</li>
+</ul>
+Note that FOCUS is compatible with both global- and global-local-view MLLMs. <br>
+</p>
 
 <section class="hero is-small">
   <div class="hero-body">
@@ -386,22 +385,23 @@ highest confidence. Note that FOCUS is compatible with both global- and global-l
               <img src="static/images/pareto.svg" alt="Main results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
             <p class="has-text-justified">
-We conduct experiments with LLaVA-1.5 and LLaVA-OneVision on V*Bench, HRBench-4K, and HRBench-8K. FOCUS with LLaVA-1.5 achieves an accuracy of 72.77% on V*Bench,
-51.75% on HRBench-4K, and 45.00% on HRBench-8K. FOCUS with LLaVA-OneVision achieves an accuracy of 92.15% on V*Bench, 71.13% on HRBench-4K, and 69.63% on HRBench-8K. Overall, FOCUS outperforms three popular visual cropping methods (<a href="https://arxiv.org/abs/2312.14135" target="_blank">SEAL</a>, <a href="https://arxiv.org/abs/2502.17422" target="_blank">ViCrop</a> and <a href="https://arxiv.org/abs/2408.15556" target="_blank">DC2</a>) in both accuracy and efficiency, and matches the best-performing baseline, <a href="https://arxiv.org/abs/2411.16044" target="_blank">ZoomEye</a>, while requiring 3 – 6.5× less compute. 
+We conduct experiments with LLaVA-1.5 and LLaVA-OneVision on <a href="https://arxiv.org/abs/2312.14135" target="_blank" style="color: #2563eb;">V*Bench</a>, <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">HRBench-4K</a>, and <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">HRBench-8K</a>. 
+Overall, FOCUS outperforms three popular visual cropping methods (<a href="https://arxiv.org/abs/2312.14135" target="_blank" style="color: #2563eb;">SEAL</a>, <a href="https://arxiv.org/abs/2502.17422" target="_blank" style="color: #2563eb;">ViCrop</a> and <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">DC2</a>) in both accuracy and efficiency, and matches the best-performing baseline, <a href="https://arxiv.org/abs/2411.16044" target="_blank" style="color: #2563eb;">ZoomEye</a>, while requiring 3 – 6.5× less compute. FOCUS with LLaVA-1.5 achieves an accuracy of 72.77% on V*Bench,
+51.75% on HRBench-4K, and 45.00% on HRBench-8K. FOCUS with LLaVA-OneVision achieves an accuracy of 92.15% on V*Bench, 71.13% on HRBench-4K, and 69.63% on HRBench-8K. See the plot above for details.
           </p>
             <p class="has-text-justified">
               <img src="static/images/MME-R.png" alt="MME-R results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
                           <p class="has-text-justified">
-Furthermore, we perform additional evaluation on MME-RealWorld-Lite. FOCUS outperforms the vanilla baseline on most sub-tasks. ZoomEye
-and our method have strengths in different domains. FOCUS is better for reasoning, while ZoomEye is better at perception tasks. Still, our method is on average 5.47× more efficient than ZoomEye.
+Furthermore, we perform an additional evaluation on <a href="https://arxiv.org/abs/2408.13257" target="_blank" style="color: #2563eb;">MME-RealWorld-Lite</a>. FOCUS outperforms the vanilla baseline on most sub-tasks. Taking a closer look, ZoomEye
+and our method have strengths in different domains. FOCUS is better for reasoning, while ZoomEye is better at perception tasks. With regard to compute, however, our method is on average 5.47× more efficient than ZoomEye. See the table above for details.
           </p>
 
               <div style="display: flex; justify-content: center;">
                 <img src="static/images/qwen25VL.png" alt="qwen25vl" class="blend-img-background center-image" style="max-width: 50%; height: auto;" loading="lazy">
               </div>
               <p class="has-text-justified">
-                Qwen-2.5-VL processes high-resolution images with native resolution, thereby preserving spatial details more effectively. We evaluate FOCUS with Qwen-2.5-VL and find state-of-the-art accuracy on HRBench-4K and HRBench-8K, 79.25% and 76.25%, respectively. This confirms the
-compatibility of FOCUS with different MLLM architectures.
+                Moreover, we use FOCUS with Qwen-2.5-VL, the current state-of-the-art MLLM. Qwen-2.5-VL processes high-resolution images with native resolution, thereby preserving spatial details more effectively. We evaluate FOCUS with Qwen-2.5-VL and find state-of-the-art accuracy on HRBench-4K and HRBench-8K, 79.25% and 76.25%, respectively. This confirms the
+compatibility of FOCUS with different MLLM architectures. See the table above for details.
             </p>
         </div>
       </div>
@@ -415,7 +415,7 @@ compatibility of FOCUS with different MLLM architectures.
 <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <h2 class="title is-3">Qualitative examples</h2>
+      <h2 class="title is-3">Qualitative Examples</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
         <!-- TODO: Replace with your research result images -->
