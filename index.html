@@ -323,11 +323,11 @@ less compute.
           <h2 class="title is-3">Fine-Grained VQA is Underexplored</h2>
          <p>
                 <div style="display: flex; flex-direction: column; align-items: center;">
-                  <img src="static/images/motivation.svg" alt="motivation" style="width: 100%; object-fit: contain;" loading="lazy">
+                  <img src="static/images/motivation_1.svg" alt="motivation" style="width: 100%; object-fit: contain;" loading="lazy">
                 </div>
               </div>
             </p>
-            <p>
+            <p class="has-text-justified">
               While MLLMs demonstrate impressive capabilities on regular  VQA tasks, they often struggle with fine-grained VQA that requires attention to small details in images. 
               Recent MLLMs such as LLaVA-OneVision try to address this issue by
               processing additional local crops extracted from the original images. However, their effectiveness on fine-grained VQA tasks still remains limited.
@@ -354,7 +354,7 @@ FlashAttention. Moreover, progress on small-object VQA is enabled by the availab
          <p>
               <img src="static/images/flow_chart1.svg" alt="Method" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
-            <p>
+            <p class="has-text-justified">
               We propose a visual cropping method, termed <span style="text-decoration: underline;">F</span>ine-grained visual
 <span style="text-decoration: underline;">O</span>bject <span style="text-decoration: underline;">C</span>ropping <span style="text-decoration: underline;">U</span>sing cached token <span style="text-decoration: underline;">S</span>imilarity (FOCUS), that addresses these issues as is outlined
 in the following. To tackle limitation (1), FOCUS leverages the internal representations of MLLMs, specifically
@@ -387,14 +387,14 @@ Note that FOCUS is compatible with both global- and global-local-view MLLMs. <br
          <p>
               <img src="static/images/pareto.svg" alt="Main results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
             </p>
-            <p>
+            <p class="has-text-justified">
 We conduct experiments with LLaVA-1.5 and LLaVA-OneVision on <a href="https://arxiv.org/abs/2312.14135" target="_blank" style="color: #2563eb;">V*Bench</a>, <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">HRBench-4K</a>, and <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">HRBench-8K</a>. 
 Overall, FOCUS outperforms three popular visual cropping methods (<a href="https://arxiv.org/abs/2312.14135" target="_blank" style="color: #2563eb;">SEAL</a>, <a href="https://arxiv.org/abs/2502.17422" target="_blank" style="color: #2563eb;">ViCrop</a> and <a href="https://arxiv.org/abs/2408.15556" target="_blank" style="color: #2563eb;">DC2</a>) in both accuracy and efficiency, and matches the best-performing baseline, <a href="https://arxiv.org/abs/2411.16044" target="_blank" style="color: #2563eb;">ZoomEye</a>, while requiring 3 – 6.5× less compute. FOCUS with LLaVA-1.5 achieves an accuracy of 72.77% on V*Bench,
 51.75% on HRBench-4K, and 45.00% on HRBench-8K. FOCUS with LLaVA-OneVision achieves an accuracy of 92.15% on V*Bench, 71.13% on HRBench-4K, and 69.63% on HRBench-8K. See the plot above for details.
           </p>
             <p>
               <img src="static/images/MME-R.png" alt="MME-R results" class="blend-img-background center-image" style="max-width: 100%; height: auto;" loading="lazy">
-                          <p>
+                          <p class="has-text-justified">
 Furthermore, we perform an additional evaluation on <a href="https://arxiv.org/abs/2408.13257" target="_blank" style="color: #2563eb;">MME-RealWorld-Lite</a>. FOCUS outperforms the vanilla baseline on most sub-tasks. Taking a closer look, ZoomEye
 and our method have strengths in different domains. FOCUS is better for reasoning, while ZoomEye is better at perception tasks. With regard to compute, our method is on average 5.47× more efficient than ZoomEye. See the table above for details.
           </p>
@@ -402,7 +402,7 @@ and our method have strengths in different domains. FOCUS is better for reasonin
               <div style="display: flex; justify-content: center;">
                 <img src="static/images/qwen25VL.png" alt="qwen25vl" class="blend-img-background center-image" style="max-width: 50%; height: auto;" loading="lazy">
               </div>
-              <p>
+              <p class="has-text-justified">
                 Moreover, we use FOCUS with Qwen-2.5-VL, the current state-of-the-art MLLM. Qwen-2.5-VL processes high-resolution images with native resolution, thereby preserving spatial details more effectively. We evaluate FOCUS with Qwen-2.5-VL-7B and find state-of-the-art accuracy on HRBench-4K and HRBench-8K, 79.25% and 76.25%, respectively. This confirms the
 compatibility of FOCUS with different MLLM architectures. See the table above for details.
             </p>
